@@ -1,0 +1,30 @@
+<div class="center-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="login-form" [formGroup]="form">
+        <mat-form-field class="input-login">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username"
+                 [class.is-invalid]="usernameValid">
+          <mat-error *ngIf="usernameValid">
+            Please enter a valid username
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-login">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password"
+                 [class.is-invalid]="passwordValid">
+          <mat-error *ngIf="passwordValid">
+            Please enter a valid password
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  color="primary" mat-raised-button (click)="login()">Login</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
