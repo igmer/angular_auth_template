@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validator, Validators} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
-import {LoginRequest} from "../../interfaces/interfaces";
+import {LoginRequest, LoginResponse} from "../../interfaces/interfaces";
+import {StorageService} from "../../services/storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,8 +12,9 @@ import {LoginRequest} from "../../interfaces/interfaces";
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder,private authService:
-    AuthService) {
+
+  constructor(private fb: FormBuilder, private authService:
+    AuthService, private storage: StorageService,private router: Router) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -32,8 +35,18 @@ export class LoginComponent implements OnInit {
       username: this.form.get('username')?.value,
       password: this.form.get('password')?.value
     }
-    this.authService.login(loginRequest).subscribe(data =>{
-      console.log(data)
+    this.authService.login(loginRequest).subscribe({
+      next: (data: LoginResponse) => {
+        this.router.navigateByUrl('/home')
+        this.storage.saveToken(data.token);
+      },
+      error: (error) => {
+        if (error.status === 401) {
+        } else {
+          console.log('error')
+        }
+      }
+
     })
   }
 
