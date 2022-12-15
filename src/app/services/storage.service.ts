@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {throwNullPortalOutletError} from "@angular/cdk/portal/portal-errors";
 
 @Injectable({
   providedIn: 'root'
