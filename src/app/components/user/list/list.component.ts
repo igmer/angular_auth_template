@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from "../../../services/user.service";
-import UserInterface from "../../../interfaces/UserInterface";
+import UserInterface from "../../../interfaces/user.interface";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 
