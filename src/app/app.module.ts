@@ -13,6 +13,9 @@ import {MatListModule} from "@angular/material/list";
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { ListComponent } from './components/user/list/list.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { ListComponent } from './components/user/list/list.component';
         ReactiveFormsModule,
         MaterialModule,
         HttpClientModule,
-        MatListModule
+        MatListModule,
+        MatGridListModule,
+        MatButtonToggleModule,
+
     ],
   providers: [],
   bootstrap: [AppComponent]

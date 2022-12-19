@@ -7,10 +7,13 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatToolbarModule} from "@angular/material/toolbar";
-
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
 const MaterialComponets = [
    MatButtonModule,MatFormFieldModule,MatCardModule,MatInputModule,MatIconModule,MatSidenavModule,
-  MatDividerModule,MatToolbarModule
+  MatDividerModule,MatToolbarModule, MatProgressSpinnerModule, MatTableModule, MatSortModule, MatPaginatorModule
  ]
 @NgModule({
   declarations: [],
